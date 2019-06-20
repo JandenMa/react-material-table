@@ -19,7 +19,7 @@
 ## Usage
 
 ```jsx
-import { TableWidget } from '@jandenma/react-material-tabble'
+import { TableWidget } from '@jandenma/react-material-table'
 ```
 
 ## Props
@@ -60,11 +60,8 @@ import React, { useState } from 'react'
 import { TableWidget } from '@jandenma/react-material-table'
 
 const OrdinaryPayroll = props => {
-
   const [cols, setCols] = useState([
-
     {
-
       index: 0,
 
       name: 'employee',
@@ -74,11 +71,9 @@ const OrdinaryPayroll = props => {
       isFixed: true,
 
       fixedColWidth: 100
-
     },
 
     {
-
       index: 1,
 
       name: 'actions',
@@ -88,11 +83,9 @@ const OrdinaryPayroll = props => {
       isFixed: true,
 
       fixedColWidth: 100
-
     },
 
     {
-
       index: 2,
 
       name: 'grossPay',
@@ -104,65 +97,48 @@ const OrdinaryPayroll = props => {
       fixedPosition: 'end',
 
       fixedColWidth: 110
-
     },
 
     {
-
       index: 3,
 
       name: 'regularHours1',
 
       displayName: 'Regular Hours'
-
     },
 
     {
-
       index: 4,
 
       name: 'regularHours2',
 
       displayName: 'Regular Hours'
-
     },
 
     {
-
       index: 5,
 
       name: 'regularHours3',
 
       displayName: 'Regular Hours'
-
     },
 
     {
-
       index: 6,
 
       name: 'regularHours4',
 
       displayName: 'Regular Hours'
-
     }
-
   ])
 
   return (
-
     <div className="App">
-
       <TableWidget
-
         showPagination
-
         columns={cols}
-
         data={[
-
           [
-
             { name: 'employee', render: <input /> },
 
             { name: 'grossPay', render: <button>22</button> },
@@ -176,11 +152,9 @@ const OrdinaryPayroll = props => {
             { name: 'regularHours3', render: <em>poeo</em> },
 
             { name: 'regularHours4', render: <strong>cc</strong> }
-
           ],
 
           [
-
             { name: 'employee', render: <input /> },
 
             { name: 'grossPay', render: <button>22</button> },
@@ -194,19 +168,12 @@ const OrdinaryPayroll = props => {
             { name: 'regularHours3', render: <em>92201</em> },
 
             { name: 'regularHours4', render: <em>poeo</em> }
-
           ]
-
         ]}
-
       />
-
     </div>
-
   )
-
 }
 
 export default OrdinaryPayroll
-
 ```
