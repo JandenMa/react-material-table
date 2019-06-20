@@ -1,6 +1,6 @@
 {
   "name": "@jandenma/react-material-table",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A custom fixed columns table based on Material-UI and built by TypeScript",
   "main": "./dist/TableWidget.min.js",
   "author": {
@@ -61,5 +61,6 @@
     "README.md",
     "LICENCE",
     "dist/*"
-  ]
+  ],
+  "homepage": "https://jandenma.github.io/react-material-table/"
 }
