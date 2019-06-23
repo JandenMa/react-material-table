@@ -2,6 +2,11 @@
 
 > _A custom table which can fixed columns based on **Material-UI** and built by **TypeScript**_
 
+## Change Logs
+
+- v1.0.0 - v1.0.2: First release version.
+- v1.0.3 - v1.0.4: Optimize webpack config, minimize package size. (~~307Kib~~ 10.8Kib)
+
 ## Install
 
 - npm
