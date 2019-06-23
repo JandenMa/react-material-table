@@ -12,6 +12,7 @@ module.exports = {
     libraryTarget: 'commonjs2'
   },
   resolve: {
+    modules: [path.resolve('src'), path.resolve('node_modules')],
     // Add '.ts' and '.tsx' as resolvable extensions.
     extensions: ['.ts', '.tsx', '.js']
   },
@@ -35,12 +36,19 @@ module.exports = {
       }
     ]
   },
-
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    react: 'react'
-  }
+  externals: [
+    {
+      react: {
+        root: 'React',
+        commonjs2: 'react',
+        commonjs: ['react'],
+        amd: 'react'
+      }
+    },
+    /@material-ui\/.*/
+  ]
 }
