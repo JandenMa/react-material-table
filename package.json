@@ -1,6 +1,6 @@
 {
   "name": "@jandenma/react-material-table",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A custom fixed columns table based on Material-UI and built by TypeScript",
   "main": "./dist/TableWidget.min.js",
   "author": {
@@ -45,7 +45,7 @@
   ],
   "scripts": {
     "dev": "webpack --mode development --module-bind js=babel-loader",
-    "build": "webpack --config webpack.config.js --progress --colors"
+    "build": "webpack --config webpack.config.js --optimize-minimize --progress --colors"
   },
   "browserslist": [
     ">0.2%",
