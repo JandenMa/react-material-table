@@ -6,17 +6,16 @@ import TableNormal from './widgets/TableNormal.widget'
 import TableFixedRight from './widgets/TableFixedRight.widget'
 import { TablePropTypes } from './typeDefs/Types'
 
-/**
- * @description A custom fixed columns table based on Material-UI and built by TypeScript
- */
 export const TableWidget: ComponentType<TablePropTypes> = (
   props: TablePropTypes
 ) => {
   const {
+    classes,
     columns,
     data,
     showPagination = false,
-    rowsPerPageOptions = [10, 15, 20]
+    rowsPerPageOptions = [10, 15, 20],
+    totalsData
   } = props
   const [page, setPage] = useState(0)
   const [rowsPerPage, setRowsPerPage] = useState(rowsPerPageOptions[0])
@@ -80,6 +79,7 @@ export const TableWidget: ComponentType<TablePropTypes> = (
           {data.length > 0 ? (
             <Fragment>
               <TableNormal
+                classes={classes}
                 columns={columns}
                 data={
                   showPagination
@@ -87,10 +87,12 @@ export const TableWidget: ComponentType<TablePropTypes> = (
                     : data
                 }
                 onScroll={onScroll}
+                totalsData={totalsData}
               />
               {canFixed && (
                 <Fragment>
                   <TableFixedLeft
+                    classes={classes}
                     showLeftShadow={scrollLeft > 0}
                     columns={columns.filter(c => {
                       const { isFixed, fixedPosition = 'start' } = c
@@ -104,8 +106,10 @@ export const TableWidget: ComponentType<TablePropTypes> = (
                           )
                         : data
                     }
+                    totalsData={totalsData}
                   />
                   <TableFixedRight
+                    classes={classes}
                     showRightShadow={scrollRight > scrollLeft}
                     columns={columns.filter(c => {
                       const { isFixed, fixedPosition = 'start' } = c
@@ -119,6 +123,7 @@ export const TableWidget: ComponentType<TablePropTypes> = (
                           )
                         : data
                     }
+                    totalsData={totalsData}
                   />
                 </Fragment>
               )}

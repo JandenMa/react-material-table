@@ -6,6 +6,7 @@ import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import TableHead from '@material-ui/core/TableHead'
+import TableFooter from '@material-ui/core/TableFooter'
 import {
   TableBasePropTypes,
   DataCellPropTypes,
@@ -36,6 +37,9 @@ const styles = () =>
     cell: {
       padding: '2px 16px',
       transition: 'all .3s, height 0s'
+    },
+    footer: {
+      borderTop: 'solid 3px #1bad9f'
     }
   })
 
@@ -45,7 +49,7 @@ const styles = () =>
 const TableWidget: ComponentType<TableBasePropTypes> = (
   props: TableBasePropTypes
 ) => {
-  const { classes, columns, data, hideFixedCell = false } = props
+  const { classes, columns, data, hideFixedCell = false, totalsData } = props
   const [cols, setCols] = useState(new Array<ColumnPropTypes>())
 
   /**
@@ -171,6 +175,39 @@ const TableWidget: ComponentType<TableBasePropTypes> = (
           )
         })}
       </TableBody>
+      {totalsData && (
+        <TableFooter className={classes.footer}>
+          <TableRow className={classes.row}>
+            {cols.map(_c => {
+              const {
+                index,
+                name,
+                align = 'left',
+                isFixed = false,
+                fixedColWidth = 100
+              } = _c
+              const { render = <Fragment /> } =
+                getDataCell(totalsData, name) || {}
+              return (
+                <TableCell
+                  className={classes.cell}
+                  align={align}
+                  key={index}
+                  style={{
+                    height: '48px',
+                    width: isFixed ? `${fixedColWidth}px` : 'auto',
+                    minWidth: isFixed ? `${fixedColWidth}px` : 'auto',
+                    // TO HIDDEN THE CELL WHICH IS IN NORMAL ROW BY FIXED
+                    visibility: hideFixedCell && isFixed ? 'hidden' : 'visible'
+                  }}
+                >
+                  {render}
+                </TableCell>
+              )
+            })}
+          </TableRow>
+        </TableFooter>
+      )}
     </Table>
   )
 }

@@ -20,6 +20,7 @@ type TableBaseClassPropTypes = {
   row?: string
   cell?: string
   header?: string
+  footer?: string
 }
 
 export type TableBasePropTypes = {
@@ -30,6 +31,7 @@ export type TableBasePropTypes = {
   showLeftShadow?: boolean
   showRightShadow?: boolean
   onScroll?: Function
+  totalsData?: Array<DataCellPropTypes>
 }
 
 export type TablePropTypes = {
@@ -38,4 +40,5 @@ export type TablePropTypes = {
   data: Array<Array<DataCellPropTypes>>
   showPagination?: boolean
   rowsPerPageOptions?: Array<number>
+  totalsData?: Array<DataCellPropTypes>
 }

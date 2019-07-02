@@ -22,7 +22,7 @@ const styles = () =>
 const TableFixedRightWidget: ComponentType<TableBasePropTypes> = (
   props: TableBasePropTypes
 ) => {
-  const { classes, columns, data, showRightShadow } = props
+  const { classes, columns, data, showRightShadow, totalsData } = props
 
   return (
     <div
@@ -31,7 +31,12 @@ const TableFixedRightWidget: ComponentType<TableBasePropTypes> = (
         boxShadow: showRightShadow ? '-6px 0 6px -4px rgba(0,0,0,0.15)' : 'none'
       }}
     >
-      <TableBase columns={columns} data={data} />
+      <TableBase
+        classes={{ footer: classes.footer }}
+        columns={columns}
+        data={data}
+        totalsData={totalsData}
+      />
     </div>
   )
 }

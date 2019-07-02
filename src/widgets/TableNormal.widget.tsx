@@ -21,7 +21,7 @@ const styles = () =>
 const TableNormalWidget: ComponentType<TableBasePropTypes> = (
   props: TableBasePropTypes
 ) => {
-  const { classes, columns, data, onScroll = () => {} } = props
+  const { classes, columns, data, onScroll = () => {}, totalsData } = props
   const [oldWidth, setOldWidth] = useState('0px') //RECORD THE WIDTH FOR AVOIDING CALL MORE WHEN RESIZE
   const ref = useRef(null)
   let canFixed = useMediaQuery('(min-width:960px)')
@@ -51,7 +51,13 @@ const TableNormalWidget: ComponentType<TableBasePropTypes> = (
         id="TableNormalWidgetScrollArea"
         onScroll={() => onScroll(ref)}
       >
-        <TableBase columns={columns} data={data} hideFixedCell={canFixed} />
+        <TableBase
+          classes={{ footer: classes.footer }}
+          columns={columns}
+          data={data}
+          hideFixedCell={canFixed}
+          totalsData={totalsData}
+        />
       </div>
     </div>
   )

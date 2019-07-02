@@ -19,6 +19,7 @@ declare type TableBaseClassPropTypes = {
     row?: string;
     cell?: string;
     header?: string;
+    footer?: string;
 };
 export declare type TableBasePropTypes = {
     columns: Array<ColumnPropTypes>;
@@ -28,6 +29,7 @@ export declare type TableBasePropTypes = {
     showLeftShadow?: boolean;
     showRightShadow?: boolean;
     onScroll?: Function;
+    totalsData?: Array<DataCellPropTypes>;
 };
 export declare type TablePropTypes = {
     columns: Array<ColumnPropTypes>;
@@ -35,5 +37,6 @@ export declare type TablePropTypes = {
     data: Array<Array<DataCellPropTypes>>;
     showPagination?: boolean;
     rowsPerPageOptions?: Array<number>;
+    totalsData?: Array<DataCellPropTypes>;
 };
 export {};

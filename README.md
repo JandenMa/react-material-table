@@ -6,6 +6,7 @@
 
 - v1.0.0 - v1.0.2: First release version.
 - v1.0.3 - v1.0.4: Optimize webpack config, minimize package size. (~~307Kib~~ 10.8Kib)
+- v1.0.5: Supports passing parameter to render totals data footer.
 
 ## Install
 
@@ -47,15 +48,31 @@ import { TableWidget } from '@jandenma/react-material-table'
 
 2. **data**:
 
-   - **Type**: `Array<object>`
+   - **Type**: `Array<Array<object>>`
    - **Required**: true, but can be empty
-   - **Array Item**:
-     - name: string, must be included in the columns, will match the column according to the name
-     - render: element, to render what you want
+   - **Outer Array**: Includes all of rows data
+   - **Inner Array**: Includes all columns data in each row
+     - **Item**:
+       - name: string, must be included in the columns, will match the column according to the name
+       - render: element, to render what you want
 
 3. **showPagination**: boolean, default `false`, if true it will show the pagination.
 
 4. **rowsPerPageOptions**: `Array<number>`, default [10, 15, 20], to set the rows per page select options.
+
+5. **totalsData**:
+
+   - **Type**: `Array<object>`
+
+   - **Required**: true, but can be empty
+
+   - **Array Item**:
+   - name: string, must be included in the columns, will match the column according to the name
+     - render: element, to render what you want
+
+6. **classes**:
+
+   - footer: for table footer style
 
 ## Example
 
@@ -174,6 +191,21 @@ const OrdinaryPayroll = props => {
 
             { name: 'regularHours4', render: <em>poeo</em> }
           ]
+        ]}
+        totalsData={[
+          { name: 'employee', render: 'Totals' },
+
+          { name: 'grossPay', render: 200 },
+
+          { name: 'actions', render: <React.Fragment /> },
+
+          { name: 'regularHours1', render: 100 },
+
+          { name: 'regularHours2', render: 300 },
+
+          { name: 'regularHours3', render: 200 },
+
+          { name: 'regularHours4', render: 400 }
         ]}
       />
     </div>
