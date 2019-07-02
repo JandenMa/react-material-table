@@ -1,6 +1,6 @@
 {
   "name": "@jandenma/react-material-table",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A custom fixed columns table based on Material-UI and built by TypeScript",
   "main": "./dist/TableWidget.min.js",
   "author": {
@@ -19,7 +19,7 @@
   "private": false,
   "dependencies": {
     "@material-ui/core": "3.9.2",
-    "check-equal": "1.0.3"
+    "check-equal": "^1.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.1.6",
