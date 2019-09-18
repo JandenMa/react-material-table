@@ -7,6 +7,7 @@
 - v1.0.0 - v1.0.2: First release version.
 - v1.0.3 - v1.0.4: Optimize webpack config, minimize package size. (~~307Kib~~ 10.8Kib)
 - v1.0.5: Supports passing parameter to render totals data footer.
+- v1.0.6: Bug fixes.
 
 ## Install
 

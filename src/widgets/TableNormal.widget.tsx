@@ -8,6 +8,7 @@ const styles = () =>
   createStyles({
     container: {
       overflowY: 'auto',
+      height: '100%',
       zIndex: 0
     },
     scrollBar: {

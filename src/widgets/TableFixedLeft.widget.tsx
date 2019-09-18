@@ -10,6 +10,7 @@ const styles = () =>
       left: 0,
       position: 'absolute',
       top: 0,
+      height: '100%',
       zIndex: 9999,
       overflow: 'hidden',
       transition: 'box-shadow .3s ease'
