@@ -4,10 +4,11 @@
 
 ## Change Logs
 
-- v1.0.0 - v1.0.2: First release version.
-- v1.0.3 - v1.0.4: Optimize webpack config, minimize package size. (~~307Kib~~ 10.8Kib)
+- v1.0.0: - v1.0.2: First release version.
+- v1.0.3: - v1.0.4: Optimize webpack config, minimize package size. (~~307Kib~~ 10.8Kib)
 - v1.0.5: Supports passing parameter to render totals data footer.
 - v1.0.6: Bug fixes.
+- v1.0.7: Bug fixes.
 
 ## Install
 
@@ -26,7 +27,7 @@
 ## Usage
 
 ```jsx
-import { TableWidget } from '@jandenma/react-material-table'
+import { TableWidget } from "@jandenma/react-material-table";
 ```
 
 ## Props
@@ -78,18 +79,18 @@ import { TableWidget } from '@jandenma/react-material-table'
 ## Example
 
 ```jsx
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-import { TableWidget } from '@jandenma/react-material-table'
+import { TableWidget } from "@jandenma/react-material-table";
 
 const OrdinaryPayroll = props => {
   const [cols, setCols] = useState([
     {
       index: 0,
 
-      name: 'employee',
+      name: "employee",
 
-      displayName: 'Employee',
+      displayName: "Employee",
 
       isFixed: true,
 
@@ -99,9 +100,9 @@ const OrdinaryPayroll = props => {
     {
       index: 1,
 
-      name: 'actions',
+      name: "actions",
 
-      displayName: 'Actions',
+      displayName: "Actions",
 
       isFixed: true,
 
@@ -111,13 +112,13 @@ const OrdinaryPayroll = props => {
     {
       index: 2,
 
-      name: 'grossPay',
+      name: "grossPay",
 
-      displayName: 'Gross Pay',
+      displayName: "Gross Pay",
 
       isFixed: true,
 
-      fixedPosition: 'end',
+      fixedPosition: "end",
 
       fixedColWidth: 110
     },
@@ -125,35 +126,35 @@ const OrdinaryPayroll = props => {
     {
       index: 3,
 
-      name: 'regularHours1',
+      name: "regularHours1",
 
-      displayName: 'Regular Hours'
+      displayName: "Regular Hours"
     },
 
     {
       index: 4,
 
-      name: 'regularHours2',
+      name: "regularHours2",
 
-      displayName: 'Regular Hours'
+      displayName: "Regular Hours"
     },
 
     {
       index: 5,
 
-      name: 'regularHours3',
+      name: "regularHours3",
 
-      displayName: 'Regular Hours'
+      displayName: "Regular Hours"
     },
 
     {
       index: 6,
 
-      name: 'regularHours4',
+      name: "regularHours4",
 
-      displayName: 'Regular Hours'
+      displayName: "Regular Hours"
     }
-  ])
+  ]);
 
   return (
     <div className="App">
@@ -162,56 +163,56 @@ const OrdinaryPayroll = props => {
         columns={cols}
         data={[
           [
-            { name: 'employee', render: <input /> },
+            { name: "employee", render: <input /> },
 
-            { name: 'grossPay', render: <button>22</button> },
+            { name: "grossPay", render: <button>22</button> },
 
-            { name: 'actions', render: <span>33</span> },
+            { name: "actions", render: <span>33</span> },
 
-            { name: 'regularHours1', render: <strong>cc</strong> },
+            { name: "regularHours1", render: <strong>cc</strong> },
 
-            { name: 'regularHours2', render: <u>21</u> },
+            { name: "regularHours2", render: <u>21</u> },
 
-            { name: 'regularHours3', render: <em>poeo</em> },
+            { name: "regularHours3", render: <em>poeo</em> },
 
-            { name: 'regularHours4', render: <strong>cc</strong> }
+            { name: "regularHours4", render: <strong>cc</strong> }
           ],
 
           [
-            { name: 'employee', render: <input /> },
+            { name: "employee", render: <input /> },
 
-            { name: 'grossPay', render: <button>22</button> },
+            { name: "grossPay", render: <button>22</button> },
 
-            { name: 'actions', render: <span>33</span> },
+            { name: "actions", render: <span>33</span> },
 
-            { name: 'regularHours1', render: <strong>dd</strong> },
+            { name: "regularHours1", render: <strong>dd</strong> },
 
-            { name: 'regularHours2', render: <u>21</u> },
+            { name: "regularHours2", render: <u>21</u> },
 
-            { name: 'regularHours3', render: <em>92201</em> },
+            { name: "regularHours3", render: <em>92201</em> },
 
-            { name: 'regularHours4', render: <em>poeo</em> }
+            { name: "regularHours4", render: <em>poeo</em> }
           ]
         ]}
         totalsData={[
-          { name: 'employee', render: 'Totals' },
+          { name: "employee", render: "Totals" },
 
-          { name: 'grossPay', render: 200 },
+          { name: "grossPay", render: 200 },
 
-          { name: 'actions', render: <React.Fragment /> },
+          { name: "actions", render: <React.Fragment /> },
 
-          { name: 'regularHours1', render: 100 },
+          { name: "regularHours1", render: 100 },
 
-          { name: 'regularHours2', render: 300 },
+          { name: "regularHours2", render: 300 },
 
-          { name: 'regularHours3', render: 200 },
+          { name: "regularHours3", render: 200 },
 
-          { name: 'regularHours4', render: 400 }
+          { name: "regularHours4", render: 400 }
         ]}
       />
     </div>
-  )
-}
+  );
+};
 
-export default OrdinaryPayroll
+export default OrdinaryPayroll;
 ```
